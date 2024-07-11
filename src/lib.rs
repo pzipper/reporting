@@ -79,7 +79,7 @@ impl File {
             }
             if char == '\n' {
                 line += 1;
-                column = 0;
+                column = 1;
             } else {
                 column += 1;
             }
