@@ -1,4 +1,4 @@
-# reporting ![Crates.io Version](https://img.shields.io/crates/v/reporting) ![docs.rs](https://img.shields.io/docsrs/reporting)
+# reporting [![Crates.io Version](https://img.shields.io/crates/v/reporting)](https://crates.io/crates/reporting) [![docs.rs](https://img.shields.io/docsrs/reporting)](https://docs.rs/reporting/latest/reporting/index.html)
 Simple diagnostic reporting for compilers.
 
 <img src="sample.svg">
