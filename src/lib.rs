@@ -128,10 +128,27 @@ impl Location {
     }
 
     /// Returns the line and column number of this source location within its file.
+    ///
+    /// ```
+    /// # use reporting::{Location, File};
+    /// let my_file = File::new("test.txt", "hello\nworld");
+    ///
+    /// let (line1, column1) = Location::new(my_file.clone(), 0).line_column();
+    /// let (line2, column2) = Location::new(my_file.clone(), 6).line_column();
+    /// assert_eq!((line1, column1), (1, 1));
+    /// assert_eq!((line2, column2), (2, 1));
+    /// ```
     pub fn line_column(&self) -> (usize, usize) {
         self.file()
             .line_column(self.offset())
             .expect("Offset should not be out of file's bounds")
+    }
+}
+
+impl std::fmt::Display for Location {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let (line, column) = self.line_column();
+        write!(f, "{}:{}:{}", self.file().path(), line, column)
     }
 }
 
