@@ -90,7 +90,7 @@ impl File {
 }
 
 /// A location in a file.
-#[derive(Clone, Debug, PartialEq, Eq)]
+#[derive(Clone, PartialEq, Eq)]
 pub struct Location {
     file: Arc<File>,
     offset: usize,
@@ -142,6 +142,12 @@ impl Location {
         self.file()
             .line_column(self.offset())
             .expect("Offset should not be out of file's bounds")
+    }
+}
+
+impl std::fmt::Debug for Location {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "{}@{}", self.file().path(), self.offset())
     }
 }
 
