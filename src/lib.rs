@@ -206,8 +206,8 @@ impl Report {
     }
 
     /// Adds a location to this diagnostic report.
-    pub fn location(mut self, location: Location) -> Self {
-        self.location = Some(location);
+    pub fn location(mut self, location: impl Into<Option<Location>>) -> Self {
+        self.location = location.into();
         self
     }
 
