@@ -10,7 +10,7 @@ checksum = "038dfcf04a5feb68e9c60b21c9625a54c2c0616e79b72b0fd87075a056ae1d1b"
 
 [[package]]
 name = "reporting"
-version = "0.1.2"
+version = "0.1.3"
 dependencies = [
  "anstyle",
  "unicode-width",
