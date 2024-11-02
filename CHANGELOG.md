@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.1.4
+- **fix**: No longer panic when the cursor is past the last character.
+- **refactor**: Bump `anstyle` to `v1.0.10`
+- **refactor**: Bump `unicode-width` to `v0.2.0`
+
 ## 0.1.3
 - **feat**: Change `location` to take `Option<Location>`.
 

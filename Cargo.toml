@@ -3,11 +3,11 @@ name = "reporting"
 description = "Simple diagnostic reporting for compilers"
 license = "MIT"
 repository = "https://github.com/pzipper/reporting"
-version = "0.1.3"
+version = "0.1.4"
 edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-anstyle = "1.0.7"
-unicode-width = "0.1.13"
+anstyle = "1.0.10"
+unicode-width = "0.2.0"

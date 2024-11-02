@@ -323,21 +323,17 @@ impl<'a> std::fmt::Display for Renderer<'a> {
 
                 // Calculate cursor offset
                 let mut offset = 0;
-                let cursor_width = line
-                    .chars()
-                    .enumerate()
-                    .find(|(idx, char)| {
-                        if *idx == column - 1 {
-                            true
-                        } else {
-                            offset += char.width().unwrap_or(1);
-                            false
-                        }
-                    })
-                    .unwrap()
-                    .1
-                    .width()
-                    .unwrap_or(1);
+                let cursor_width = match line.chars().enumerate().find(|(idx, char)| {
+                    if *idx == column - 1 {
+                        true
+                    } else {
+                        offset += char.width().unwrap_or(1);
+                        false
+                    }
+                }) {
+                    Some((_, char)) => char.width().unwrap_or(1),
+                    None => 1,
+                };
 
                 // Write cursor
                 write!(f, "{}", Reset)?;
